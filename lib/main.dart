@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mhko_chat_app/core/theme.dart';
+import 'package:mhko_chat_app/features/home/presentation/home_page.dart';
 import 'package:mhko_chat_app/features/login/presentation/login_page.dart';
 import 'package:mhko_chat_app/features/login/presentation/register_page.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/login": (context) => LoginPage(),
         "/register": (context) => RegisterPage(),
+        "/home": (context) => HomePage(),
       },
     );
   }

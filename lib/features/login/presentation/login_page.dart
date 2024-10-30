@@ -67,7 +67,9 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: MyButton(
                 text: "Login",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, "/home");
+                },
               ),
             ),
             // register now
