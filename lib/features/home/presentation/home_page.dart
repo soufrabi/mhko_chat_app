@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mhko_chat_app/features/chat/presentation/chat_page.dart';
+import 'package:mhko_chat_app/features/settings/presentation/settings_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<String> userEmails = [
@@ -98,14 +99,24 @@ class HomePage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
-            ListTile(
-              title: Text(
-                "SETTINGS",
-                style: TextStyle(color: Theme.of(context).colorScheme.primary),
-              ),
-              leading: Icon(
-                Icons.settings,
-                color: Theme.of(context).colorScheme.primary,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SettingsPage(),
+                  ),
+                );
+              },
+              child: ListTile(
+                title: Text(
+                  "SETTINGS",
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.primary),
+                ),
+                leading: Icon(
+                  Icons.settings,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ),
             ListTile(
