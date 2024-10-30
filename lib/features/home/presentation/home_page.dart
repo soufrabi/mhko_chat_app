@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mhko_chat_app/features/chat/presentation/chat_page.dart';
 
 class HomePage extends StatelessWidget {
   final List<String> userEmails = [
@@ -44,24 +45,34 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
           itemCount: userEmails.length,
           itemBuilder: (context, index) {
-            return Container(
-              padding: const EdgeInsets.all(20.0),
-              margin: const EdgeInsets.symmetric(
-                horizontal: 25,
-                vertical: 6,
-              ),
-              decoration: BoxDecoration(
-                color: const Color(0xFFEBEBEB),
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Row(
-                children: [
-                  const Icon(Icons.person),
-                  const SizedBox(
-                    width: 16,
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(),
                   ),
-                  Text(userEmails[index]),
-                ],
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.all(20.0),
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFEBEBEB),
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.person),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Text(userEmails[index]),
+                  ],
+                ),
               ),
             );
           }),
